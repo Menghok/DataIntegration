@@ -1,10 +1,8 @@
 package model;
 
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
