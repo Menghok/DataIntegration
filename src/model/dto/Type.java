@@ -1,8 +1,14 @@
 package model.dto;
 
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Type {
 
 	private int typeId;
+	@NotEmpty
+	@Pattern(regexp = "[a-zA-Z]")
 	private String typeName;
 	
 	public Type() {}

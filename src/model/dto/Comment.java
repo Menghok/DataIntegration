@@ -2,16 +2,36 @@ package model.dto;
 
 import java.sql.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
 public class Comment {
 
 	private int commentId;
 	private String commentDescription;
+	@NotEmpty
+	@Pattern(regexp = "[a-zA-Z]")
 	private String username;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createDate;
+	@NotNull
+	@NumberFormat(style = org.springframework.format.annotation.NumberFormat.Style.NUMBER)
 	private int likeAmount;
+	@NotNull
+	@NumberFormat(style = org.springframework.format.annotation.NumberFormat.Style.NUMBER)
 	private int dislikeAmount;
+	@NotNull
+	@NumberFormat(style = org.springframework.format.annotation.NumberFormat.Style.NUMBER)
 	private int replyAmount;
+	@NotNull
+	@NumberFormat(style = org.springframework.format.annotation.NumberFormat.Style.NUMBER)
 	private int replyTo;
+	@NotNull
+	@NumberFormat(style = org.springframework.format.annotation.NumberFormat.Style.NUMBER)
 	private int articleId;
 	
 	public Comment() {}

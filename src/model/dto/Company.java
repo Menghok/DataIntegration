@@ -1,10 +1,18 @@
 package model.dto;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Company {
 	
 	private int companyId;
+	@NotEmpty
+	@Pattern(regexp = "[a-zA-Z]")
 	private String companyName;
 	private String logo;
+	@NotNull
 	private int typeId;
 
 	public Company() {}
@@ -15,7 +23,7 @@ public class Company {
 		this.logo = logo;
 		this.typeId = typeId;
 	}
-
+	
 	public int getCompanyId() {
 		return companyId;
 	}
